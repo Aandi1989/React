@@ -1,0 +1,15 @@
+.posts{
+  margin: 0.5%;
+}
+
+.item{
+  font-style: italic;
+}
+
+.posts .item img {
+  width: 50px;
+  border-radius: 10px;
+}
+
+
+

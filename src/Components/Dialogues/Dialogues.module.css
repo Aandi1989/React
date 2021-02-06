@@ -1,0 +1,30 @@
+.dialogues{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialoguesItems{
+    padding: 2%;
+    
+    
+}
+
+ .dialogue.active{
+
+  font-style: italic;
+   
+}
+
+.dialogue a:link, .dialogue a:visited{
+    text-decoration: none;
+    color:black;
+  }
+  
+  .dialogue a:hover{
+    font-weight: bold;
+  }
+
+.messages{
+    padding-left: 0,4%;
+    
+}

@@ -1,0 +1,23 @@
+.nav{
+  background-color: #D00000;
+  padding: 5%;
+  grid-area: n;
+  
+  }
+
+  .item{
+    font:13px Arial;
+  }
+
+  .item a.activeLink{
+    font-weight: bold;
+  }
+
+  .item a:link, a:visited{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .item a:hover{
+    font-weight: bold;
+  }
