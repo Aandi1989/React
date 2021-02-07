@@ -6,22 +6,7 @@ import DialogueItem from './DialogueItem/DialogueItem'
 
 
 
-// const DialogueItem = (props) => {
-    
-//    let path ='/dialogues/' + props.id;
-    
-//     return (
-//         <div className={s.dialogue}>
-//             <NavLink to={path}>{props.name}</NavLink>
-//         </div>
-//     )
-// }
 
-// const Message = (props) =>{
-//     return(
-//         <div className={s.message}>{props.message}</div> 
-//     )
-// }
 
 const Dialogues = () => {
     
@@ -48,17 +33,11 @@ const Dialogues = () => {
         <div className={s.dialogues}>
             <div className={s.dialoguesItems}>
                {dialoguesElements}
-                {/* <DialogueItem name={dialoguesData[0].name} id={dialoguesData[0].id} />
-                <DialogueItem name={dialoguesData[1].name} id={dialoguesData[1].id} />
-                <DialogueItem name={dialoguesData[2].name} id={dialoguesData[2].id} />
-                <DialogueItem name={dialoguesData[3].name} id={dialoguesData[3].id} />
-                <DialogueItem name={dialoguesData[4].name} id={dialoguesData[4].id} /> */}
+                
             </div>
             <div className={s.messages}>
                {messagesElements}
-                {/* <Message  message={messagesData[0].message}/>
-                <Message  message={messagesData[1].message}/>
-                <Message  message={messagesData[2].message}/> */}
+                
             </div>
         </div>
     )
