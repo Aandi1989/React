@@ -42,16 +42,11 @@ const App = (props) => {
         <Header />
         <Navbar />
         <div className="app-wrapper-content">
-          {/* <Route path="/Dialogues" component={Dialogues} /> */}
-          <Route path="/Dialogues" render={()=> <Dialogues dialogues={props.dialogues}  messages={props.messages}/>} />
-          {/* <Route path="/Profile" component={Profile} /> */}
-          <Route path="/Profile" render={()=> <Profile posts={props.posts}/>} />
+          <Route path="/Dialogues" render={()=> <Dialogues state={props.state.dialoguesPage} />} />
+          <Route path="/Profile" render={()=> <Profile state={props.state.profilePage}/>} />
           <Route path="/News" render={()=> <News/>} />
-          {/* <Route path="/News" component={News} /> */}
           <Route path="/Setting" render={()=> <Setting/>} />
-          {/* <Route path="/Setting" component={Setting} /> */}
           <Route path="/Music" render={()=> <Music/>} />
-          {/* <Route path="/Music" component={Music} /> */}
 
           
         </div>
