@@ -6,6 +6,7 @@ let state = {
             { id: 1, message: 'Hi man! How are you doing?', like: 2 },
             { id: 2, message: 'I am realy sick and tired of this shit!', like: 15 }
         ],
+        newPostText:''
     },
     dialoguesPage:{
         dialogues: [
@@ -23,13 +24,19 @@ let state = {
     }
     };
 
- export let addPost=(postMessage)=>{
+ export let addPost=()=>{
     let newPost={
-        id:3, message:postMessage, like:0
+        id:3, message:state.profilePage.newPostText, like:0
     } 
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText='';
     rerenderEntireTree(state);
- }   
+ } 
+ 
+ export let updateNewPostText=(newText)=>{
+     state.profilePage.newPostText=newText;
+     rerenderEntireTree(state);
+ }
 
     
 
