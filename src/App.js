@@ -10,7 +10,7 @@ import News from './Components/News/News';
 import Setting from './Components/Setting/Setting';
 import Music from './Components/Music/Music';
 
-import {BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 
 const App = (props) => {
@@ -18,7 +18,6 @@ const App = (props) => {
 
  
   return (
-    // <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
@@ -32,7 +31,6 @@ const App = (props) => {
           
         </div>
       </div>
-    // </BrowserRouter>
   );
 }
 
