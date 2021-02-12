@@ -5,14 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './Components/Redux/State'
 import { BrowserRouter } from 'react-router-dom';
-// import {addPost, updateNewPostText, subscribe} from './Components/Redux/State'
 
 
  let rerenderEntireTree=(state)=>{
   ReactDOM.render(
          <BrowserRouter>
          <React.StrictMode>
-           <App state={state} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)} />
+           <App state={state} dispatch={store.dispatch.bind(store)}  />
          </React.StrictMode>
          </BrowserRouter>,
          document.getElementById('root')
