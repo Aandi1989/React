@@ -13,7 +13,7 @@ import Music from './Components/Music/Music';
 import { Route } from 'react-router-dom'
 
 
-const App = (props) => {
+const App = () => {
  
 
  
@@ -22,8 +22,8 @@ const App = (props) => {
         <Header />
         <Navbar />
         <div className="app-wrapper-content">
-          <Route path="/Dialogues" render={()=> <DialoguesContainer store={props.store}/>} />
-          <Route path="/Profile" render={()=> <Profile store={props.store}/>} />
+          <Route path="/Dialogues" render={()=> <DialoguesContainer/>} />
+          <Route path="/Profile" render={()=> <Profile/>} />
           <Route path="/News" render={()=> <News/>} />
           <Route path="/Setting" render={()=> <Setting/>} />
           <Route path="/Music" render={()=> <Music/>} />
