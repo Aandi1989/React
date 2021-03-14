@@ -15,18 +15,25 @@ let initialState={
             { id: 3, message: 'What is up?' }
         ],
         newMessageBody:''
-}
+};
+
 
 const dialoguesReducer = (state=initialState, action) => {
+    
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body;
-            return state;
-        case SEND_MESSAGE:
-            let body = state.newMessageBody;
-            state.newMessageBody = '';
-            state.messages.push({ id: 6, message: body });
-            return state;
+            return{
+                ...state,
+                newMessageBody:action.body
+            }
+        case SEND_MESSAGE:{
+            let body ={id:6, message:state.newMessageBody};
+            return{
+                ...state,
+                messages:[...state.messages, body],
+                newMessageBody:''
+            }
+        }
         default:
             return state;
     }
