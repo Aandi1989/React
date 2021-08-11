@@ -33,7 +33,7 @@ const dialoguesReducer = (state=initialState, action) => {
                 messages:[...state.messages, body],
                 newMessageBody:''
             }
-        }
+        } 
         default:
             return state;
     }
