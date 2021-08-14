@@ -4,11 +4,15 @@ import s from './Navbar.module.css';
 const Navbar = ()=>{
     return (
 <nav className={s.nav}>
+      
       <div className={s.item}>
         <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
       </div>
       <div className={s.item} >
       <NavLink to='/dialogues' activeClassName={s.activeLink}>Messages</NavLink>
+      </div>
+      <div className={s.item} >
+      <NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>
       </div>
       <div className={s.item}>
       <NavLink to='/news' activeClassName={s.activeLink}>News</NavLink>
@@ -19,6 +23,7 @@ const Navbar = ()=>{
       <div className={s.item}>
       <NavLink to='/setting' activeClassName={s.activeLink}>Setting</NavLink>
       </div>
+    
     </nav>
     )  
 }
