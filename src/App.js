@@ -24,7 +24,7 @@ import React, {
           <Navbar />
           <div className="app-wrapper-content">
             <Route path="/Dialogues" render={()=> <DialoguesContainer/>} />
-            <Route path='/profile/:userId' render={()=> <ProfileContainer/>} />
+            <Route path='/profile/:userId?' render={()=> <ProfileContainer/>} />
             <Route path="/Users" render={()=> <UsersContainer/>} />
             <Route path="/News" render={()=> <News/>} />
             <Route path="/Setting" render={()=> <Setting/>} />
