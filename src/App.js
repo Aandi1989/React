@@ -2,7 +2,6 @@ import React, {
     Component
   } from 'react';
   import './App.css';
-  import Header from './Components/Header/Header';
   import Navbar from './Components/Navbar/Navbar';
   import DialoguesContainer from './Components/Dialogues/DialoguesContainer';
   import News from './Components/News/News';
@@ -12,6 +11,7 @@ import React, {
   
   import { Route } from 'react-router-dom';
   import ProfileContainer from './Components/Profile/ProfileContainer';
+import HeaderContainer from './Components/Header/HeaderContainer';
   
   
   const App = () => {
@@ -20,7 +20,7 @@ import React, {
    
     return (
         <div className="app-wrapper">
-          <Header />
+          <HeaderContainer />
           <Navbar />
           <div className="app-wrapper-content">
             <Route path="/Dialogues" render={()=> <DialoguesContainer/>} />

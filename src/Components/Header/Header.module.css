@@ -7,3 +7,7 @@
   grid-area: h;
   background-color: #F7DD25;
   }
+
+  .loginBlock{
+    float: right;
+  }
