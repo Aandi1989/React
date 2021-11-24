@@ -12,6 +12,7 @@ import React, {
   import { Route } from 'react-router-dom';
   import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
+import Login from './Components/Login/Login';
   
   
   const App = () => {
@@ -26,6 +27,7 @@ import HeaderContainer from './Components/Header/HeaderContainer';
             <Route path="/Dialogues" render={()=> <DialoguesContainer/>} />
             <Route path='/profile/:userId?' render={()=> <ProfileContainer/>} />
             <Route path="/Users" render={()=> <UsersContainer/>} />
+            <Route path="/login" render={()=> <Login/>} />
             <Route path="/News" render={()=> <News/>} />
             <Route path="/Setting" render={()=> <Setting/>} />
             <Route path="/Music" render={()=> <Music/>} />
