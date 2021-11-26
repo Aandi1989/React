@@ -9,6 +9,7 @@ import { Redirect } from 'react-router-dom';
 
 
 
+
 const Dialogues = (props) => {
     
     let onSendMessageClick=()=>{
@@ -23,9 +24,9 @@ const Dialogues = (props) => {
     let dialoguesElements=props.dialogues.map( d=> <DialogueItem name={d.name} id={d.id} /> );
      let messagesElements=props.messages.map( m=> <Message  message={m.message}/> );
 
-     if(!props.isAuth){
-         return <Redirect to={'/login'}/>
-     }
+    //  if(!props.isAuth){
+    //      return <Redirect to={'/login'}/>
+    //  }
 
     return (
         <div className={s.dialogues}>
