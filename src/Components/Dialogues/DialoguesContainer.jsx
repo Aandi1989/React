@@ -1,12 +1,9 @@
-import { NavLink } from 'react-router-dom';
 import {sendMessageCreator,updateNewMessageBodyCreator} from './../Redux/dialogues-reducer';
 import Dialogues from './Dialogues';
 import {connect} from "react-redux";
-import { Redirect } from 'react-router-dom';
 import {withAuthRedirect} from '../hoc/withAuthRedirect';
-
-
-
+import {compose} from 'redux';
+ 
 let mapStateToProps=(state)=>{
     return{
         newMessageBody:state.dialoguesPage.newMessageBody,
@@ -26,8 +23,7 @@ let mapDispatchToProps=(dispatch)=>{
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(Dialogues);
-
-const DialoguesContainer=connect(mapStateToProps,mapDispatchToProps)(AuthRedirectComponent);
-
-export default DialoguesContainer;
+export default compose(
+    connect(mapStateToProps,mapDispatchToProps),
+    withAuthRedirect
+)(Dialogues);
