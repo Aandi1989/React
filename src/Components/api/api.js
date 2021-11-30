@@ -23,12 +23,26 @@ export const usersAPI = {
             .then(response => response.data);
     },
     setUserProfile(userId){
-        return instance.get(`profile/` + userId)
-        .then(response=>response.data)
+        console.warn('Obsolete method. Please use profileAPI object')
+        return profileAPI.setUserProfile(userId);
     },
     authMe(){
         return instance.get(`auth/me`)
         .then(response=>response.data)
+    }
+}
+
+export const profileAPI = {
+    
+    setUserProfile(userId){
+        return instance.get(`profile/` + userId)
+        .then(response=>response.data)
+    },
+    getStatus(userId){
+        return instance.get(`profile/status/` + userId)
+    },
+    updateStatus(status){
+        return instance.put(`profile/status`, {status: status})
     }
 }
 
