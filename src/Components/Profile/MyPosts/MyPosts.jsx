@@ -1,37 +1,40 @@
-import Post from './Post/Post'
-import s from './MyPosts.module.css'
+import Post from './Post/Post';
+import s from './MyPosts.module.css';
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 
 const MyPosts = (props) => {
-  
-let newPostElement= React.createRef();
 
-  let addPost=()=>{
-  props.addPost()
-}
+  let sendNewPost=(values)=>{
+    props.addPost(values.newPostBody)
+  }
 
-let onPostChange=()=>{
-  let  text=newPostElement.current.value;
-  props.updateNewPostText(text);
-}
-
-let postsElements=props.posts.map( p=><Post message={p.message} like={p.like} /> )
+  let postsElements = props.posts.map(p => <Post message={p.message} like={p.like} />)
 
   return (
     <div>
       <div className={s.stuff}>
         <h4>My posts</h4>
-        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-        <div className={s.button}>
-          <button onClick={addPost} >Add post</button>
-        </div>
+      <ReduvPostForm onSubmit={sendNewPost}/>
       </div>
       {postsElements}
-     
     </div >
-
   )
 }
+
+const newPostForm=(props)=>{
+  return(
+    <form onSubmit={props.handleSubmit}>
+      <Field component="textarea" name="newPostBody" placeholder="type new post"/>
+    <div className={s.button}>
+      <button>Add post</button>
+    </div>
+  </form>
+  )
+}
+
+const ReduvPostForm=reduxForm({form:"NewPostBody"})(newPostForm);
+
 
 export default MyPosts

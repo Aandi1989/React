@@ -1,41 +1,44 @@
 import s from './Dialogues.module.css';
 import Message from './Message/Message';
 import DialogueItem from './DialogueItem/DialogueItem';
-
-
-
-
+import { Field, reduxForm } from 'redux-form';
 
 
 
 const Dialogues = (props) => {
-    
-    let onSendMessageClick=()=>{
-        props.onSendMessageClick();
-    }
-    let onNewMessageChange=(event)=>{
-        let body=event.target.value;
-        props.updateNewMessageBody(body)
+
+    let addNewMessage=(values)=>{
+        props.onSendMessageClick(values.newMessageBody)
     }
 
-    
-    let dialoguesElements=props.dialogues.map( d=> <DialogueItem name={d.name} id={d.id} /> );
-     let messagesElements=props.messages.map( m=> <Message  message={m.message}/> );
+    let dialoguesElements = props.dialogues.map(d => <DialogueItem name={d.name} id={d.id} />);
+    let messagesElements = props.messages.map(m => <Message message={m.message} />);
 
     return (
         <div className={s.dialogues}>
             <div className={s.dialoguesItems}>
-               {dialoguesElements}
-               
+                {dialoguesElements}
+
             </div>
             <div className={s.messages}>
-              <div> {messagesElements}</div>
-               <div><textarea value={props.newMessageBody} onChange={onNewMessageChange} placeholder='Enter your message'></textarea></div>
-                <div><button onClick={onSendMessageClick}>Send</button></div>
-                
+                <div> {messagesElements}</div>
             </div>
+            <AddMessageFormRedux onSubmit={addNewMessage}/>
         </div>
     )
 }
+
+const addMessageForm=(props)=>{
+    return(
+        <form onSubmit={props.handleSubmit}>
+        <div>
+            <Field component="textarea" name="newMessageBody" placeholder='Enter your message'></Field>
+        </div>
+        <div><button>Send</button></div>
+    </form>
+    )
+};
+
+const AddMessageFormRedux=reduxForm({form:"dialogAddMessageForm"})(addMessageForm);
 
 export default Dialogues
