@@ -25,9 +25,20 @@ export const usersAPI = {
     setUserProfile(userId){
         console.warn('Obsolete method. Please use profileAPI object')
         return profileAPI.setUserProfile(userId);
-    },
-    authMe(){
+    }
+}
+
+export const authAPI={
+    me(){
         return instance.get(`auth/me`)
+        .then(response=>response.data)
+    },
+    login(email, password, rememberMe){
+        return instance.post(`auth/login`, {email, password, rememberMe})
+        .then(response=>response.data)
+    },
+    logout(){
+        return instance.delete(`auth/login`)
         .then(response=>response.data)
     }
 }
