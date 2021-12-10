@@ -28,7 +28,7 @@ export const setAuthUserData=(id, email, login, isAuth)=>({type:SET_USER_DATA, p
 
 export const setAuthThunk=()=>{
     return (dispatch)=>{
-        authAPI.me()
+       return authAPI.me()
         .then(data=>{
           if(data.resultCode === 0){
             let{id,email,login}=data.data;
