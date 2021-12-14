@@ -1,6 +1,9 @@
 import Preloader from '../../Common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
-import ProfileStatus from './ProfileStatus'
+import ProfileStatus from './ProfileStatus';
+import ProfileStatustWithHooks from './ProfileStatustWithHooks';
+import ProfileStatusWithHooks from './ProfileStatustWithHooks'
+
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -14,7 +17,7 @@ const ProfileInfo = (props) => {
       <div className={s.avaDisc}>
         <img src={props.profile.photos.large} />
       </div>
-        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+        <ProfileStatustWithHooks status={props.status} updateStatus={props.updateStatus}/>
     </div>
   )
 }
