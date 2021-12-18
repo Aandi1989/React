@@ -1,9 +1,8 @@
-import { profileAPI, usersAPI } from "../api/api";
+import { profileAPI} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
-
 
 let initialState={
     posts: [
@@ -31,7 +30,6 @@ const profileReducer = (state=initialState, action) => {
         }
         default:
             return state;
-
     }
 }
 
@@ -41,7 +39,7 @@ export const setStatus=(status)=>({type:SET_STATUS,status});
 
 export const setUserProfileThunk=(userId)=>{
     return (dispatch)=>{
-        usersAPI.setUserProfile(userId)
+        profileAPI.setUserProfile(userId)
         .then(data=>{
             dispatch(setUserProfile(data))
         })

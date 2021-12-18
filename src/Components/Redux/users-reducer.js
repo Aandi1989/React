@@ -16,7 +16,7 @@ let initialState = {
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true,
-    followingInProgress: []
+    isFollowingProgress: []
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -77,8 +77,8 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 followingInProgress: action.isFetching ?
-                    [...state.followingInProgress, action.userId] :
-                    state.followingInProgress.filter(id => id != action.userId)
+                    [...state.isFollowingProgress, action.userId] :
+                    state.isFollowingProgress.filter(id => id != action.userId)
             }
         }
         default:

@@ -1,5 +1,3 @@
-import { authAPI } from "../api/api";
-import { stopSubmit } from "redux-form";
 import { setAuthThunk } from "./auth-reducer";
 
 const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
@@ -18,7 +16,6 @@ const appReducer = (state=initialState, action) => {
         }
         default:
             return state;
-
     }
 }
 
